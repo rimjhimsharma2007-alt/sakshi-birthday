@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09060a">
+<title>For Sakshi — My Baby ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#08060a;
+  --bg2:#12090f;
+  --rose:#ff789f;
+  --rose2:#ffabc1;
+  --cream:#f8eef1;
+  --muted:#b9aeb3;
+  --glass:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.11);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:#fff;
+  font-family:Montserrat,sans-serif;
+  overflow-x:hidden;
+}
+button{font:inherit}
+section{min-height:100vh;position:relative;overflow:hidden}
+.hidden{display:none!important}
+
+/* ---------- BACKDROP ---------- */
+.ambient{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,71,125,.10),transparent 28%),
+    radial-gradient(circle at 80% 70%,rgba(145,46,105,.12),transparent 30%);
+}
+.grain{
+  position:fixed;inset:-50%;z-index:20;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  transform:rotate(7deg);
+}
+
+/* ---------- INTRO ---------- */
+#intro{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.4)),
+    radial-gradient(circle at 50% 45%,rgba(194,35,88,.22),transparent 48%),
+    #08060a;
+}
+.intro-content{z-index:2;padding:30px;animation:fadeUp 1.6s ease}
+.kicker{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#d8cbd0;
+  opacity:.65;margin-bottom:24px;
+}
+.name{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(90px,18vw,180px);
+  color:#fff;line-height:.9;
+  text-shadow:0 0 45px rgba(255,83,133,.3);
+}
+.intro-line{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(22px,4vw,34px);
+  margin:26px 0 42px;color:#eadfe3;
+}
+.primary-btn,.ghost-btn{
+  border:1px solid rgba(255,255,255,.25);
+  color:white;background:rgba(255,255,255,.05);
+  border-radius:999px;padding:15px 28px;
+  cursor:pointer;transition:.35s;
+  letter-spacing:2px;font-size:11px;
+}
+.primary-btn{background:linear-gradient(135deg,#ff6c98,#c83b69);border:none}
+.primary-btn:hover,.ghost-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,71,125,.2)}
+.scroll-hint{margin-top:30px;font-size:10px;letter-spacing:3px;opacity:.35}
+
+/* ---------- FLOATING PARTICLES ---------- */
+.particle{
+  position:fixed;bottom:-30px;pointer-events:none;z-index:1;
+  color:rgba(255,125,157,.35);
+  animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+  from{transform:translateY(0) rotate(0);opacity:0}
+  12%{opacity:1}
+  to{transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+
+/* ---------- BIRTHDAY ---------- */
+#birthday{
+  display:none;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(217,35,91,.32),transparent 48%),
+    #09060a;
+}
+.birthday-inner{padding:30px;max-width:1100px;z-index:2;animation:zoomIn 1.5s ease}
+.overline{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#e7d7dd;opacity:.7}
+.birthday-title{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:600;font-size:clamp(45px,9vw,105px);
+  line-height:.86;margin:28px 0;
+}
+.birthday-title .pink{display:block;color:var(--rose)}
+.birthday-title .white{display:block}
+.birthday-sub{font-family:"Great Vibes",cursive;font-size:clamp(55px,10vw,100px);color:#ff91ad}
+.birthday-caption{margin:24px auto 0;max-width:650px;color:#cfc1c7;line-height:1.7;font-size:14px}
+
+/* ---------- STORY ---------- */
+#story{display:none;padding:110px 7%;background:linear-gradient(#08060a,#12090f)}
+.story-wrap{max-width:900px;margin:auto}
+.section-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--rose);margin-bottom:24px}
+.story-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(52px,8vw,92px);line-height:.95;
+  max-width:900px;margin-bottom:45px;
+}
+.story-copy{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(22px,3vw,30px);line-height:1.58;color:#ddd1d6;
+}
+.story-copy p{margin-bottom:30px}
+.italic{font-style:italic;color:#ff9ab4}
+.story-quote{
+  margin:50px 0;padding:30px 0 30px 28px;
+  border-left:1px solid rgba(255,120,159,.55);
+  font-family:"Great Vibes",cursive;font-size:clamp(35px,6vw,60px);
+  color:#ff9ab4;
+}
+.actions{margin-top:55px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- TIMELINE ---------- */
+#timeline{display:none;padding:110px 7%;background:#09070a}
+.timeline-wrap{max-width:1000px;margin:auto}
+.timeline-head{text-align:center;margin-bottom:70px}
+.script-title{font-family:"Great Vibes",cursive;font-size:clamp(60px,9vw,100px)}
+.timeline{
+  position:relative;max-width:850px;margin:auto;padding-left:35px;
+}
+.timeline:before{
+  content:"";position:absolute;left:7px;top:0;bottom:0;width:1px;background:linear-gradient(transparent,#a94b69,transparent);
+}
+.event{position:relative;margin-bottom:48px}
+.event:before{
+  content:"";position:absolute;left:-34px;top:7px;width:14px;height:14px;
+  border-radius:50%;background:var(--rose);box-shadow:0 0 20px rgba(255,120,159,.6);
+}
+.event-label{font-size:10px;letter-spacing:4px;color:var(--rose);text-transform:uppercase;margin-bottom:8px}
+.event h3{font-family:"Cormorant Garamond",serif;font-size:32px;margin-bottom:8px}
+.event p{color:#bdb1b7;line-height:1.7;max-width:700px}
+
+/* ---------- GALLERY ---------- */
+#memories{display:none;padding:100px 5%;background:linear-gradient(#08060a,#0e080d)}
+.gallery-head{text-align:center;margin-bottom:55px}
+.gallery-sub{font-size:11px;letter-spacing:3px;color:#a99da2;margin-top:12px}
+.gallery{
+  max-width:1200px;margin:auto;
+  columns:3 250px;column-gap:16px;
+}
+.photo{
+  width:100%;display:block;margin:0 0 16px;
+  border-radius:10px;break-inside:avoid;cursor:pointer;
+  opacity:0;transform:translateY(25px) scale(.98);
+  transition:opacity .7s ease,transform .7s ease,filter .35s ease;
+  filter:brightness(.88) saturate(.94);
+}
+.photo.visible{opacity:1;transform:translateY(0) scale(1)}
+.photo:hover{filter:brightness(1.06) saturate(1.08);transform:scale(1.015)}
+
+/* ---------- MUSIC ---------- */
+#music{
+  display:none;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(188,39,94,.25),transparent 52%),
+    #09060a;
+}
+.music-card{
+  width:min(650px,90%);padding:60px 30px;
+  background:rgba(255,255,255,.035);border:1px solid var(--line);
+  border-radius:28px;backdrop-filter:blur(18px);
+  box-shadow:0 30px 100px rgba(0,0,0,.35);
+  z-index:2;
+}
+.music-disc{
+  width:150px;height:150px;margin:0 auto 30px;border-radius:50%;
+  background:radial-gradient(circle,#111 0 12%,#333 13% 16%,#111 17% 40%,#222 41% 100%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 50px rgba(255,95,135,.16);
+  animation:spin 9s linear infinite paused;
+}
+.music-disc.playing{animation-play-state:running}
+.music-disc:after{content:"♥";color:#ff7c9e;font-size:24px}
+.music-title{font-family:"Great Vibes",cursive;font-size:80px;color:#ff91ad}
+.artist{letter-spacing:3px;font-size:11px;color:#a99da2;margin:8px 0 35px}
+.player-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+audio{display:none}
+
+/* ---------- LETTER ---------- */
+#letter{display:none;padding:105px 6%;background:linear-gradient(#09060a,#130a10)}
+.letter-wrap{max-width:900px;margin:auto}
+.letter-head{text-align:center;margin-bottom:55px}
+.letter-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+  border:1px solid var(--line);border-radius:24px;
+  padding:clamp(25px,5vw,62px);
+  box-shadow:0 35px 100px rgba(0,0,0,.32);
+}
+.letter-card + .letter-card{margin-top:30px}
+.letter-card h2{
+  font-family:"Great Vibes",cursive;color:#ff91ad;
+  font-size:48px;margin-bottom:28px;
+}
+.letter-card p{
+  font-family:"Cormorant Garamond",serif;
+  color:#e6dce0;font-size:clamp(20px,2.7vw,27px);
+  line-height:1.68;margin-bottom:26px;
+}
+.letter-card .em{color:#ff9ab4;font-style:italic}
+.signature{
+  text-align:right;font-family:"Great Vibes",cursive;
+  color:#ff91ad;font-size:50px;margin-top:45px;
+}
+.hindi{
+  font-family:"Cormorant Garamond",serif;
+}
+.wish-break{
+  text-align:center;color:#ff91ad;font-size:22px;
+  letter-spacing:2px;margin:35px 0;
+}
+
+/* ---------- FINAL ---------- */
+#final{
+  display:none;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at center,rgba(204,35,91,.38),transparent 54%),
+    #08060a;
+}
+.final-wrap{max-width:900px;padding:30px;z-index:2}
+.final-title{font-family:"Great Vibes",cursive;font-size:clamp(75px,13vw,140px);color:#ff91ad}
+.final-copy{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(24px,4vw,36px);line-height:1.55;color:#eee;
+  margin-top:25px;
+}
+.final-love{font-family:"Great Vibes",cursive;font-size:80px;color:#ff789f;margin-top:35px}
+.final-sign{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#a99da2;margin-top:30px}
+
+/* ---------- SECRET ---------- */
+.secret{
+  margin-top:45px;
+  opacity:.65;
+}
+.secret button{
+  background:none;border:none;color:#b9aeb3;cursor:pointer;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+}
+.secret-message{
+  display:none;margin:25px auto 0;max-width:650px;
+  font-family:"Great Vibes",cursive;color:#ff9ab4;
+  font-size:clamp(32px,6vw,55px);
+  animation:fadeUp .8s ease;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{
+  display:none;position:fixed;inset:0;z-index:100;
+  background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:20px;
+}
+.lightbox img{max-width:95%;max-height:90vh;object-fit:contain;border-radius:10px}
+.close{position:absolute;right:25px;top:18px;font-size:38px;cursor:pointer;color:white}
+
+/* ---------- TRANSITIONS ---------- */
+.fade-section{animation:sectionIn .9s ease}
+@keyframes sectionIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:700px){
+  .gallery{columns:2 140px;column-gap:9px}
+  .photo{margin-bottom:9px}
+  #story,#timeline,#memories,#letter{padding:80px 20px}
+  .timeline{padding-left:30px}
+  .music-card{padding:45px 20px}
+  .music-disc{width:125px;height:125px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient"></div>
+<div class="grain"></div>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="intro-content">
+    <div class="kicker">A little world I made for you</div>
+    <div class="name">Sakshi</div>
+    <div class="intro-line">I made something for you, BABYYYY. ❤️</div>
+    <button class="primary-btn" onclick="startExperience()">TAP WHEN YOU'RE READY</button>
+    <div class="scroll-hint">made by Babu · with love</div>
+  </div>
+</section>
+
+<!-- BIRTHDAY -->
+<section id="birthday">
+  <div class="birthday-inner">
+    <div class="overline">Today is your day</div>
+    <div class="birthday-title">
+      <span class="white">HAPPIESTTTTTTTTT</span>
+      <span class="pink">19THHHHHHHH</span>
+      <span class="white">BIRTHDAYYYYYYYYY</span>
+    </div>
+    <div class="birthday-sub">MY BETUUUUUUU ❤️</div>
+    <p class="birthday-caption">
+      Happy Birthday, meri jaan. Aaj ka din mere liye sirf ek date nahi hai —
+      ye woh din hai jis din meri life ka sabse beautiful person is duniya mein aaya.
+    </p>
+    <div class="actions" style="justify-content:center">
+      <button class="primary-btn" onclick="showSection('story')">START OUR STORY →</button>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-wrap">
+    <div class="section-tag">The beginning</div>
+    <h1 class="story-title">I still remember the first time I saw you…</h1>
+
+    <div class="story-copy">
+      <p>
+        We met at the entrance of <span class="italic">SOTB</span>.
+        You walked in wearing a <span class="italic">white dress in the rain</span>,
+        and somehow you looked like an angel walking straight into the middle of an ordinary day.
+      </p>
+
+      <p>
+        You instantly caught my eye. Then you introduced yourself to me and everyone else,
+        and for some reason I really liked the way you introduced yourself.
+        Maybe I noticed you more than I realised at that moment.
+      </p>
+
+      <p>
+        Then came the hackathon.
+        We started talking about the event, working together, researching things,
+        and slowly spending more and more time together.
+      </p>
+
+      <p>
+        Buddha Cafe. The library. The complex. Walking around.
+        Random conversations. Little moments.
+        Somehow, without either of us forcing anything,
+        everything just beautifully fell into place.
+      </p>
+
+      <div class="story-quote">
+        “The girl in the white dress walked in through the rain…
+        and somehow became my favourite person.”
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary-btn" onclick="showSection('timeline')">OUR LITTLE TIMELINE →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="timeline-wrap">
+    <div class="timeline-head">
+      <div class="section-tag">Our beginning</div>
+      <div class="script-title">How you became us</div>
+    </div>
+
+    <div class="timeline">
+      <div class="event">
+        <div class="event-label">Chapter 01</div>
+        <h3>The white dress & the rain</h3>
+        <p>
+          SOTB entrance. Rain. A white dress. One girl who instantly caught my eye.
+          I had no idea how important that moment would become.
+        </p>
+      </div>
+
+      <div class="event">
+        <div class="event-label">Chapter 02</div>
+        <h3>The hackathon</h3>
+        <p>
+          We started talking because of the event. Somewhere between working,
+          researching and explaining things to each other, I started getting to know you.
+        </p>
+      </div>
+
+      <div class="event">
+        <div class="event-label">Chapter 03</div>
+        <h3>Buddha Cafe</h3>
+        <p>
+          Our conversations became longer, our time together became easier,
+          and the little moments started becoming my favourite moments.
+        </p>
+      </div>
+
+      <div class="event">
+        <div class="event-label">Chapter 04</div>
+        <h3>The library & everything after</h3>
+        <p>
+          We kept finding reasons to spend time together. And somewhere along the way,
+          I stopped thinking of you as someone I was getting to know and started thinking
+          of you as someone I never wanted to be without.
+        </p>
+      </div>
+    </div>
+
+    <div class="actions" style="justify-content:center">
+      <button class="primary-btn" onclick="showSection('memories')">SEE OUR MEMORIES →</button>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories">
+  <div class="gallery-head">
+    <div class="section-tag">27 little pieces of us</div>
+    <div class="script-title">Our Memories</div>
+    <div class="gallery-sub">Every picture holds a moment I want to remember.</div>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <div class="actions" style="justify-content:center">
+    <button class="primary-btn" onclick="showSection('music')">THIS SONG REMINDS ME OF YOU →</button>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="music-card">
+    <div class="music-disc" id="disc"></div>
+    <div class="section-tag">For you, baby</div>
+    <div class="music-title">Noor</div>
+    <div class="artist">AKSHATH</div>
+
+    <audio id="song" src="music/noor.mp3" loop preload="auto"></audio>
+
+    <div class="player-row">
+      <button class="primary-btn" id="musicButton" onclick="toggleMusic()">▶ PLAY NOOR</button>
+      <button class="ghost-btn" onclick="showSection('letter')">READ MY LETTER →</button>
+    </div>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section id="letter">
+  <div class="letter-wrap">
+
+    <div class="letter-head">
+      <div class="section-tag">The part I couldn't say in one sentence</div>
+      <div class="script-title">My Baby,</div>
+    </div>
+
+    <div class="letter-card">
+      <h2>Happy Birthday, my baby ❤️</h2>
+
+      <p>
+        Today is so incredibly special because it’s your birthday, and I am so happy
+        that we get to celebrate your very first birthday together.
+        Even though we are around everyone else today, my heart is completely focused on you,
+        and I couldn't let today pass without telling you how much you mean to me.
+        Honestly, I still don't even know how everything happened so fast.
+      </p>
+
+      <p>
+        Just 1-2 months ago, we didn't even know each other properly.
+        And now, on your special day, you have already become the most important part
+        of my everyday life. Sometimes I actually stop and think about it —
+        <span class="em">how did a love this deep happen so quickly?</span>
+      </p>
+
+      <p>I still remember the first time I saw you.</p>
+
+      <p>
+        I was standing at the entrance of SOTB, and you came in wearing that white dress,
+        in the rain, talking to your friends. You looked like an angel walking in through
+        the rain. Then you introduced yourself to me and everyone else.
+        I don't know why, but I really liked the way you introduced yourself.
+        Maybe I noticed you more than I realized at that moment.
+      </p>
+
+      <p>
+        Then we started talking about the hackathon.
+        I love listening to you explain things. I love the way you research a topic,
+        the way you try to understand something properly before talking about it,
+        and the way you explain it to someone else.
+        I love how you respect people and actually listen when someone is speaking.
+      </p>
+
+      <p>
+        And slowly, without me even realizing it, I started noticing everything about you.
+      </p>
+
+      <p>
+        The little moments.<br>
+        Our time in the library.<br>
+        Buddha Cafe.<br>
+        The complex.<br>
+        Walking around.<br>
+        Talking about random things.<br>
+        Just being together.
+      </p>
+
+      <p>
+        I don't think you realize how many of these small moments I keep replaying in my head,
+        even when we are just sitting in the same room.
+      </p>
+
+      <p>
+        I especially remember the first time we were alone at Buddha Cafe.
+        We both had our heads down on the table, and then I looked into your eyes.
+      </p>
+
+      <p>
+        <span class="em">Your eyes…</span>
+        I don't know how to explain what happens to me when I look at them.
+        I love your eyes, your smile, your lips, your cheeks, your neck…
+        honestly, I love everything about you.
+        But more than how beautiful you look, I love the incredible person I see
+        when I look at you.
+        Celebrating the day you were born feels so natural because you are the best thing
+        that has happened to me.
+      </p>
+
+      <p>
+        I remember that moment at the physio too.
+        You were lying on the stretcher and I was standing near you,
+        and for some reason I became really emotional and scared.
+        There was this strange thought somewhere in the back of my mind —
+        that one day, maybe we will be standing in a completely different place,
+        in a hospital, in a pregnancy ward, with you lying there and me standing beside you.
+      </p>
+
+      <p>
+        I don't know why my mind goes so far ahead sometimes.
+        Maybe because somewhere inside me, I have already started imagining
+        a beautiful lifetime and a future with you.
+      </p>
+
+      <p>
+        Even when you're just travelling back and forth, I get worried.
+        When you're sitting on the train or heading back to your room,
+        I keep thinking about you. I wonder if you're okay, if you ate,
+        if you're comfortable, if you're safe.
+      </p>
+
+      <p>
+        And when class ends, something in me automatically starts looking for you.
+        My eyes search for you before I even consciously realize I'm doing it.
+      </p>
+
+      <p>
+        And anytime you're not right next to me, I miss you.
+        <span class="em">I miss you a lot.</span>
+      </p>
+
+      <p>
+        Even during short breaks or holidays, everything around me feels normal,
+        but something huge feels missing the moment my birthday girl is not by my side.
+      </p>
+
+      <p>
+        I don't know where all of this is going.
+        I don't know how something that started only a few days ago can already feel this deep.
+        But having you in my life is the greatest gift, and I hope today brings you
+        all the happiness you deserve.
+      </p>
+
+      <p>
+        I just know that I love the moments we are creating together.
+        And I know that whenever I think about these past few weeks,
+        I'll always remember the girl in the white dress who walked in through the rain
+        and somehow ended up becoming my favourite person in the entire world.
+      </p>
+
+      <p>
+        Have the happiest birthday, baby. I am so glad I get to spend it with you here.
+      </p>
+
+      <p class="em">I love you.</p>
+
+      <p>Muaaaahhhh ❤️ Happy Birthday!</p>
+
+      <div class="signature">Babu ❤️</div>
+    </div>
+
+    <div class="letter-card hindi">
+      <h2>And one more thing… ❤️</h2>
+
+      <p>
+        Happiesttttttttttt 19THHHHHHHH BIRTHDAYYYYYYYYY MY BETUUUUUUU
+      </p>
+
+      <p>
+        Happy Birthday meri jaan.
+        Aaj ka din mere liye sirf ek date nahi hai — ye woh din hai jis din meri life ka
+        sabse beautiful person is duniya mein aaya.
+      </p>
+
+      <p>
+        I wish ki tumhari life hamesha happiness, peace, success aur endless smiles se bhari rahe.
+        Tum jitni special ho utni hi beautiful tumhari life bhi ho.
+      </p>
+
+      <p>
+        Pata hai humne jo memories saath banayi hain na, unka koi replacement nahi hai.
+        Har call, har message, har smile, har fight, har patch-up, har late night conversation
+        sab mere dil ke bahut close hain.
+      </p>
+
+      <p>
+        Kabhi kabhi sochta hoon ki time kitni jaldi nikal gaya.
+        Lekin ek cheez kabhi nahi badli aur wo hai meri feelings.
+      </p>
+
+      <p>
+        Tumhare saath spend kiya hua har moment meri life ka favourite chapter hai.
+        These memories are priceless for me, and I'll always cherish them.
+      </p>
+
+      <p>
+        On your special day, I don't want anything except seeing you happy.
+        May your smile never fade.
+        May your heart never break.
+        May your life always be filled with love, laughter and beautiful surprises.
+      </p>
+
+      <div class="wish-break">♡ ♡ ♡</div>
+
+      <p>
+        Bhagwan kare tumhari zindagi hamesha khushiyon, pyaar aur success se bhari rahe.
+        Har naya din tumhare liye ek nayi muskaan lekar aaye.
+        Hamesha haste raho, chamakte raho aur apne sapne poore karo.
+        Wishing you a day as special as you are!
+      </p>
+
+      <p>
+        Happy Birthday to the most special person!
+        Tumhari smile hamesha aise hi chamakti rahe,
+        zindagi mein har khushi tumhare kadam chumti rahe.
+        Jo bhi sapne tum dekhte ho woh sab poore ho,
+        aur har din tumhare liye ek nayi khushi lekar aaye.
+        Stay happy, stay blessed and keep shining forever!
+      </p>
+
+      <p>
+        Aaj ka din tumhare liye bahut special ho,
+        aur aane wala har din usse bhi zyada khoobsurat ho.
+        Bhagwan tumhe hamesha khush rakhe, har mushkil se bachaye
+        aur tumhari zindagi ko pyaar, sukoon aur success se bhar de.
+      </p>
+
+      <p>
+        Tum jahan bhi raho, hamesha muskurate raho aur apni roshni se sabki zindagi roshan karte raho.
+        Wishing you endless happiness, good health and lots of beautiful memories.
+        Have a truly wonderful birthday!
+      </p>
+
+      <p>
+        May your special day be filled with love, laughter, and unforgettable memories.
+        I hope every dream you have comes true and that happiness follows you wherever you go.
+        Keep smiling, keep shining, and never stop being the amazing person you are.
+        Wishing you endless joy, good health, success, and a life full of beautiful moments.
+      </p>
+
+      <p>
+        Happy birthday, wish you happy returns of the day.
+        May Lord Shiva and Maa Kali bless you with lots of happiness and prosperity,
+        good health, and may you achieve your dreams.
+        Be happy, enjoy your day,
+        and once again — Happy Birthday. ❤️
+      </p>
+
+      <div class="signature">Muaaaahhhh ❤️<br>Babu</div>
+    </div>
+
+    <div class="actions" style="justify-content:center">
+      <button class="primary-btn" onclick="showSection('final')">ONE LAST THING… ❤️</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <div class="final-wrap">
+    <div class="section-tag">From the boy who fell for you</div>
+    <div class="final-title">Sakshi ❤️</div>
+
+    <div class="final-copy">
+      From the boy who saw a girl in a white dress walking through the rain…
+      <br><br>
+      to the boy who now can't stop looking for her whenever class ends.
+      <br><br>
+      From a hackathon conversation…
+      <br>
+      to Buddha Cafe, the library, the random walks,
+      the little fights, the patch-ups, and all the moments in between.
+    </div>
+
+    <div class="final-love">I love you.</div>
+    <div class="final-sign">— Babu, always ❤️</div>
+
+    <div class="secret">
+      <button onclick="revealSecret()">there's a tiny secret here</button>
+      <div class="secret-message" id="secretMessage">
+        You're my favourite notification, favourite distraction,
+        favourite person… and my favourite BABYYYY. ❤️
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="close">×</div>
+  <img id="lightboxImage" src="" alt="Our memory">
+</div>
+
+<script>
+const sections = ["intro","birthday","story","timeline","memories","music","letter","final"];
+
+const photos = Array.from({length:27}, (_,i) =>
+  `photos/photo${String(i+1).padStart(2,"0")}.jpeg`
+);
+
+const gallery = document.getElementById("gallery");
+
+photos.forEach((src,i)=>{
+  const img=document.createElement("img");
+  img.src=src;
+  img.alt=`Sakshi & Prashant — memory ${i+1}`;
+  img.className="photo";
+  img.loading="lazy";
+  img.onclick=(e)=>{
+    e.stopPropagation();
+    openLightbox(src);
+  };
+  gallery.appendChild(img);
+});
+
+function startExperience(){
+  showSection("birthday");
+  createParticles();
+}
+
+function showSection(id){
+  sections.forEach(name=>{
+    const el=document.getElementById(name);
+    if(el) el.style.display="none";
+  });
+
+  const target=document.getElementById(id);
+  if(!target)return;
+
+  if(["birthday","music","final"].includes(id)){
+    target.style.display="flex";
+  }else{
+    target.style.display="block";
+  }
+
+  target.classList.remove("fade-section");
+  void target.offsetWidth;
+  target.classList.add("fade-section");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+
+  if(id==="memories"){
+    setTimeout(()=>{
+      document.querySelectorAll(".photo").forEach((p,i)=>{
+        setTimeout(()=>p.classList.add("visible"),i*55);
+      });
+    },200);
+  }
+}
+
+const song=document.getElementById("song");
+const disc=document.getElementById("disc");
+const musicButton=document.getElementById("musicButton");
+
+function toggleMusic(){
+  if(song.paused){
+    song.play().then(()=>{
+      musicButton.textContent="❚❚ PAUSE NOOR";
+      disc.classList.add("playing");
+    }).catch(()=>{
+      musicButton.textContent="▶ TAP AGAIN TO PLAY";
+    });
+  }else{
+    song.pause();
+    musicButton.textContent="▶ PLAY NOOR";
+    disc.classList.remove("playing");
+  }
+}
+
+function openLightbox(src){
+  document.getElementById("lightboxImage").src=src;
+  document.getElementById("lightbox").style.display="flex";
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeLightbox();
+});
+
+function createParticles(){
+  setInterval(()=>{
+    const p=document.createElement("div");
+    p.className="particle";
+    p.textContent=Math.random()>.45 ? "♥" : "✦";
+    p.style.left=Math.random()*100+"vw";
+    p.style.fontSize=(10+Math.random()*16)+"px";
+    p.style.animationDuration=(7+Math.random()*8)+"s";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),16000);
+  },850);
+}
+
+function revealSecret(){
+  document.getElementById("secretMessage").style.display="block";
+}
+</script>
+
+</body>
+</html>
